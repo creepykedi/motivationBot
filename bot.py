@@ -2,7 +2,7 @@ import telebot
 from motivation_generator import write_to_image
 
 
-bot = telebot.TeleBot('5695100245:AAHp_V4GlsHECpoElqeASwnMp5rFIkb_MwU')
+bot = telebot.TeleBot('')
 
 
 @bot.message_handler(func=lambda message: True)
