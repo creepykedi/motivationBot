@@ -1,3 +1,4 @@
+import platform
 import numpy
 from PIL import Image, ImageDraw,ImageFont
 import random
@@ -30,7 +31,8 @@ def write_to_image(text: str, sender):
     # pick random font
     fonts = glob.glob('fonts/*')
     if not text.isascii(): # remove non-cyrilic fonts
-        fonts.remove('fonts\\PassionsConflict-Regular.ttf')
+        separator = '\\' if not platform.system() == 'Linux' else '/'
+        fonts.remove(f'fonts{separator}PassionsConflict-Regular.ttf')
     font: str = random.choice(fonts)
     print(font)
     # calculate font_size proportional to image size
